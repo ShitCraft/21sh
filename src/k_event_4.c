@@ -6,10 +6,9 @@ void	move_to_pre_line(void)
 
 	tputs(tgetstr("up", NULL), 0, myputchar);
 	i = 0;
-	while (++i != (get_termsize() * g_input->row))
+	while (++i != get_termsize())
 		tputs(tgetstr("nd", NULL), 0, myputchar);
 	g_input->row--;
-	g_input->pos -= 2;
 }
 
 int		kctrd_event(void)

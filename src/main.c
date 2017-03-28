@@ -14,7 +14,7 @@
 
 int		main(int ac, char **av, char *envp[])
 {
-	signal(SIGINT, sigint_handler);
+//	signal(SIGINT, sigint_handler);
 	sh_loop(envp);
 	return (0);
 }
@@ -35,12 +35,12 @@ void	sh_loop(char *envp[])
 		print_curr_dir(env);
 		handle_input();
 		add_command_to_list(&g_list, g_input->line);
-		av = split_args(&g_input->line);
-		i = -1;
-		while (av[++i])
-			dispatcher(av[i], &env);
+//		av = split_args(&g_input->line);
+//		i = -1;
+//		while (av[++i])
+//			dispatcher(av[i], &env);
 		refresh_input();
-		free_3d_array_args(av);
+//		free_3d_array_args(av);
 	}
 	free_args(env);
 }
